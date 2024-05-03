@@ -1,0 +1,10 @@
+FROM ubuntu
+RUN apt update -y
+RUN apt install wget -y
+RUN apt install unzip -y
+RUN  apt  install apache* -y 
+RUN  wget https://www.free-css.com/assets/files/free-css-templates/download/page290/wave-cafe.zip 
+RUN unzip wave-cafe.zip
+RUN mv 2121_wave_cafe/* /var/www/html/
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
